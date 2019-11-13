@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ts=$(date +%s%N)
+$@
+en=$(date +%s%N)
+TIME=`echo "scale=4; ($en - $ts) / 1000000000" | bc`
+
+echo "real ${TIME}"
